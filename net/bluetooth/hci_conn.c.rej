@@ -1,0 +1,17 @@
+***************
+*** 403,409 ****
+  	memset(&cp, 0, sizeof(cp));
+  
+  	cp.handle = cpu_to_le16(conn->handle);
+- 	memcpy(cp.ltk, ltk, sizeof(ltk));
+  
+  	hci_send_cmd(hdev, HCI_OP_LE_LTK_REPLY, sizeof(cp), &cp);
+  }
+--- 403,409 ----
+  	memset(&cp, 0, sizeof(cp));
+  
+  	cp.handle = cpu_to_le16(conn->handle);
++ 	memcpy(cp.ltk, ltk, sizeof(cp.ltk));
+  
+  	hci_send_cmd(hdev, HCI_OP_LE_LTK_REPLY, sizeof(cp), &cp);
+  }
